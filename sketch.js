@@ -11,6 +11,7 @@ function onLoad(){ //mobile version
     square.style.width = "90vw";
     square.style.top = "15%";
     square.style.left = "5%";
+    document.querySelector("p").style.fontSize = "24px";
   }
 }
 
