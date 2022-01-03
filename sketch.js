@@ -12,6 +12,7 @@ function onLoad(){ //mobile version
     square.style.top = "15%";
     square.style.left = "5%";
     document.querySelector("p").style.fontSize = "24px";
+    draw();
   }
 }
 
@@ -21,7 +22,7 @@ function setup(){ //init
   currentArray[aSize-1] = 1;
   createCanvas(2000, 1200);
   noStroke();
-  frameRate(120);
+  //frameRate(120);
 }
 
 function randomRule(){ //make random ruleset
