@@ -1,3 +1,7 @@
+function onLoad(){
+    
+}
+
 function setup(){ 
     createCanvas(2000, 1200);
 }
