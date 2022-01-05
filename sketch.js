@@ -106,5 +106,5 @@ function newBackground(){ //start generation over
 }
 
 function aboutPage(){ //show about page
-  
+  document.getElementById("mainbox").innerHTML = "This website uses elementary cellular automota to randomly generate visually stimulating backgrounds.";
 }
