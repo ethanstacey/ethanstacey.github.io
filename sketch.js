@@ -106,5 +106,22 @@ function newBackground(){ //start generation over
 }
 
 function aboutPage(){ //show about page
-  document.getElementById("mainbox").innerHTML = "This website uses elementary cellular automota to randomly generate visually stimulating backgrounds.";
+  document.getElementById("link1").innerHTML = "";
+  document.getElementById("link2").innerHTML = "";
+  document.getElementById("link3").innerHTML = "";
+  document.getElementById("link4").innerHTML = "";
+  document.getElementById("link5").innerHTML = "";
+  document.getElementById("text1").innerHTML = " This website uses elementary cellular automota to randomly geneate backgrounds. Each background is unique, and while similar rules and patterns will appear again, no two backgrounds will be exactly alike.";
+  document.getElementById("link6").innerHTML = "\n Back";
+
+}
+
+function homePage(){
+  document.getElementById("link1").innerHTML = "Homemade 3D Engine";
+  document.getElementById("link2").innerHTML = "Life Miner (Game)";
+  document.getElementById("link3").innerHTML = "Github";
+  document.getElementById("link4").innerHTML = "Resume/Contact";
+  document.getElementById("link5").innerHTML = "About This Page";
+  document.getElementById("text1").innerHTML = "";
+  document.getElementById("link6").innerHTML = "";
 }

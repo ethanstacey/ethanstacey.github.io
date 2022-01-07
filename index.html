@@ -9,7 +9,7 @@
 		
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
 	
-	<script type="text/javascript" src="sketch.js?v=1.9"></script>
+	<script type="text/javascript" src="sketch.js?v=2"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,11 +18,14 @@
 <body onload="onLoad()">
 	<div class="square" id="mainbox">
 		<p>Ethan Stacey</p>
-		<a href="http://hypext.rf.gd/">Homemade 3D Engine</a>
-		<a href="http://lifeminer.ml/">Life Miner (Game)</a>
-		<a href="https://github.com/hypext1/">Github</a>
-		<a href="Ethan-Stacey-Resume.pdf">Resume/Contact</a>
-		<!-- <a href="javascript:aboutPage()">About This Page</a> -->
+		<a href="http://hypext.rf.gd/" id="link1">Homemade 3D Engine</a>
+		<a href="http://lifeminer.ml/" id="link2">Life Miner (Game)</a>
+		<a href="https://github.com/hypext1/" id="link3">Github</a>
+		<a href="Ethan-Stacey-Resume.pdf" id="link4">Resume/Contact</a>
+		<a href="javascript:aboutPage()" id="link5">About This Page</a>
+		<p2 id="text1"></p2>
+		<br>
+		<a href="javascript:homePage()" id="link6"></a>
 	</div>
 </body>
 <style>
@@ -57,7 +60,7 @@
 		position: relative;
 		left: 3%;
 		z-index: 2;
-		font-size: 18px
+		font-size: 24px
 	}
 	a {
 		font-family: 'Zilla Slab', serif;
