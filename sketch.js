@@ -17,6 +17,7 @@ function onLoad(){ //mobile version
 }
 
 function setup(){ //init
+  alert("you did it");
   randomRule();
   randomRow();
   currentArray[aSize-1] = 1;
