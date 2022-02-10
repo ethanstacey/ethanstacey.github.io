@@ -1,5 +1,5 @@
 const rSize = 2; //rectangle size
-const aSize = 1200; //array size
+const aSize = 600; //array size
 currentArray = new Array(aSize).fill(0);
 temp = new Array(aSize).fill(0);
 var row = 0; //row counter
