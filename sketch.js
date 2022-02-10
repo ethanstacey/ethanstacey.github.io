@@ -1,5 +1,5 @@
 const rSize = 2; //rectangle size
-const aSize = 600; //array size
+const aSize = 1000; //array size
 currentArray = new Array(aSize).fill(0);
 temp = new Array(aSize).fill(0);
 var row = 0; //row counter
@@ -17,7 +17,6 @@ function onLoad(){ //mobile version
 }
 
 function setup(){ //init
-  alert("you did it");
   randomRule();
   randomRow();
   currentArray[aSize-1] = 1;
