@@ -18,9 +18,11 @@ function onLoad(){ //mobile version
 
 function setup(){ //init
   randomRule();
+  randomColor();
   randomRow();
   currentArray[aSize-1] = 1;
   createCanvas(2000, 1200);
+  background(255);
   noStroke();
   //frameRate(120);
 }
@@ -36,6 +38,13 @@ function randomRule(){ //make random ruleset
   rule8 = Math.floor(Math.random()*2);
 }
 
+function randomColor(){
+  color1 = Math.floor(Math.random()*16777215).toString(16);
+  color1 = "#" + color1;
+  console.log(color1);
+  document.getElementById("title").style.color = color1;
+}
+
 function randomRow(){ //make random starting row
   for (var j=0; j<aSize; j++){
     currentArray[j] = floor(random(2));
@@ -46,7 +55,7 @@ function draw(){ //draw pattern on the screen
   row++;
   for (var i = 0; i < aSize; i++){
     if (currentArray[i] == 1){ 
-      fill(0);
+      fill(color1);
     } else {
       fill(255);
     }
@@ -101,6 +110,7 @@ function cells(){ //calculate cells
 
 function newBackground(){ //start generation over
   randomRule();
+  randomColor();
   randomRow();
   row = 0;
 }
@@ -111,8 +121,9 @@ function aboutPage(){ //show about page
   document.getElementById("link3").innerHTML = "";
   document.getElementById("link4").innerHTML = "";
   document.getElementById("link5").innerHTML = "";
+  document.getElementById("link6").innerHTML = "";
   document.getElementById("text1").innerHTML = " This website uses elementary cellular automota to randomly geneate backgrounds. Each background is unique, and while similar rules and patterns will appear again, no two backgrounds will be exactly alike.";
-  document.getElementById("link6").innerHTML = "\n Back";
+  document.getElementById("link7").innerHTML = "\n Back";
 
 }
 
