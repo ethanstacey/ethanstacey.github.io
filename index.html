@@ -9,7 +9,7 @@
 		
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
 	
-	<script type="text/javascript" src="sketch.js?v=3.3"></script>
+	<script type="text/javascript" src="sketch.js?v=3.5"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
 </head>
 <body onload="onLoad()">
 	<div class="square visibledesktop" id="mainbox">
-		<p id="title">Ethan Stacey</p>
+		<p class="titleD" id="title">Ethan Stacey</p>
 		<a href="http://hypext.rf.gd/" id="link1">Homemade 3D Engine</a>
 		<a href="http://lifeminer.ml/" id="link2">Life Miner (Game)</a>
 		<a href="https://github.com/hypext1/" id="link3">Github</a>
@@ -31,7 +31,7 @@
 		<a href="javascript:homePage()" id="link7"></a>
 	</div>
 	<div class="square_mobile visibledevice" id="mainbox">
-		<p id="title">Ethan Stacey</p>
+		<p class="titleM" id="title">Ethan Stacey</p>
 		<a href="http://hypext.rf.gd/" id="link1">Homemade 3D Engine</a>
 		<a href="http://lifeminer.ml/" id="link2">Life Miner (Game)</a>
 		<a href="https://github.com/hypext1/" id="link3">Github</a>
@@ -76,6 +76,28 @@
 		font-size: 26px;
 		color: white;
 	}
+	.titleD{
+		margin-left: 15px;
+  		margin-right: 15px;
+
+		font-family: cube;
+		position: relative;
+		left: 0%;
+		z-index: 2;
+		font-size: 26px;
+		color: white;
+	}
+	.titleM{
+		margin-left: 15px;
+  		margin-right: 15px;
+
+		font-family: cube;
+		position: relative;
+		left: 0%;
+		z-index: 2;
+		font-size: 150%;
+		color: white;
+	}
 	p2 {
 		margin-left: 15px;
   		margin-right: 15px;
@@ -117,9 +139,6 @@
 		left: 23%;
 		z-index: 1;
 		background: rgba(0, 0, 0, 0.5);
-		border-style: groove;
-		border-width: 2px;
-		border-color: #fff; 
 	}
 	.square_mobile {
 		position: fixed;
@@ -129,9 +148,6 @@
 		left: 5%;
 		z-index: 1;
 		background: rgba(0, 0, 0, 0.5);
-		border-style: groove;
-		border-width: 2px;
-		border-color: #fff; 
 	}
 	.visibledevice {
 		display: none;
@@ -148,13 +164,6 @@
 			display: none;
 		}
 	}
-
-	*.unselectable {
-		-moz-user-select: -moz-none;
-		-khtml-user-select: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-	}
+	
 	</style>
 </html>
