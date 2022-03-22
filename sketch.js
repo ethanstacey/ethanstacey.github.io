@@ -3,6 +3,8 @@ const aSize = 1000; //array size
 currentArray = new Array(aSize).fill(0);
 temp = new Array(aSize).fill(0);
 var row = 0; //row counter
+const pastels = ["#CC99C9", "#9EC1CF", "#9EE09E", "#FDFD97", "#FEB144", "#FF6663"]
+const unicorn = ["#A11C66", "#D4501A", "#F5D002", "#4AA94A", "#016FA4", "#542F71"]
 
 function onLoad(){ //mobile version
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {  
@@ -39,9 +41,7 @@ function randomRule(){ //make random ruleset
 }
 
 function randomColor(){
-  color1 = Math.floor(Math.random()*16777215).toString(16);
-  color1 = "#" + color1;
-  console.log(color1);
+  color1 = unicorn[Math.floor(Math.random()*5)];
   document.getElementById("title").style.color = color1;
 }
 
