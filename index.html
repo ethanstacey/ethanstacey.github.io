@@ -9,14 +9,26 @@
 		
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
 	
-	<script type="text/javascript" src="sketch.js?v=3.1"></script>
+	<script type="text/javascript" src="sketch.js?v=3.2"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
 </head>
 <body onload="onLoad()">
-	<div class="square" id="mainbox">
+	<div class="square visibledesktop" id="mainbox">
+		<p id="title">Ethan Stacey</p>
+		<a href="http://hypext.rf.gd/" id="link1">Homemade 3D Engine</a>
+		<a href="http://lifeminer.ml/" id="link2">Life Miner (Game)</a>
+		<a href="https://github.com/hypext1/" id="link3">Github</a>
+		<a href="https://glitch.com/@ethan1stacey" id="link4">Glitch</a>
+		<a href="Ethan-Stacey-Resume.pdf" id="link5">Resume/Contact</a>
+		<a href="javascript:aboutPage()" id="link6">About This Page</a>
+		<p2 id="text1"></p2>
+		<br>
+		<a href="javascript:homePage()" id="link7"></a>
+	</div>
+	<div class="square_mobile visibledevice" id="mainbox">
 		<p id="title">Ethan Stacey</p>
 		<a href="http://hypext.rf.gd/" id="link1">Homemade 3D Engine</a>
 		<a href="http://lifeminer.ml/" id="link2">Life Miner (Game)</a>
@@ -50,29 +62,49 @@
 		opacity: .5;
 	}
 	p {
+		margin-left: 15px;
+  		margin-right: 15px;
+
 		font-family: cube;
 		position: relative;
-		left: 3%;
+		left: 0%;
 		z-index: 2;
-		font-size: 26px
+		font-size: 26px;
+		color: white;
+
 	}
 	p2 {
+		margin-left: 15px;
+  		margin-right: 15px;
+
 		font-family: 'Zilla Slab', serif;
 		position: relative;
-		left: 3%;
+		left: 0%;
 		z-index: 2;
 		font-size: 24px
 	}
 	a {
+		margin-left: 15px;
+  		margin-right: 15px;
+
+		text-decoration:none;
 		font-family: 'Zilla Slab', serif;
 		position: relative;
-		left: 3%;
+		left: 0%;
 		top: 0%;
 		z-index: 2;
 		font-size: 32px;
 		float: left;
     	clear: left;
+		color: white;
+		font-weight: bold;
 	}
+
+	a:hover {
+		background-color: #ddd;
+		color: black;
+	}
+
 	.square {
 		position: fixed;
 		height: 50vh;
@@ -80,7 +112,42 @@
 		top: 23%;
 		left: 23%;
 		z-index: 1;
+		background: rgba(0, 0, 0, 0.5);
+		border-style: groove;
+		border-width: 2px;
+		border-color: #fff; 
+	}
+	.square_mobile {
+		position: fixed;
+		height: 70vh;
+		width: 90vw;
+		top: 15%;
+		left: 5%;
+		z-index: 1;
 		background-color: #fff;
+	}
+	.visibledevice {
+		display: none;
+	}
+	.visibledesktop {
+		display: display;
+	}
+
+	@media (max-width: 700px) {
+		.visibledevice {
+			display: block;
+		}
+		.visibledesktop {
+			display: none;
+		}
+	}
+
+	*.unselectable {
+		-moz-user-select: -moz-none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
 	}
 	</style>
 </html>

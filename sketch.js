@@ -42,7 +42,7 @@ function randomRule(){ //make random ruleset
 
 function randomColor(){
   color1 = unicorn[Math.floor(Math.random()*5)];
-  document.getElementById("title").style.color = color1;
+  //document.getElementById("title").style.color = color1;
 }
 
 function randomRow(){ //make random starting row
@@ -122,17 +122,17 @@ function aboutPage(){ //show about page
   document.getElementById("link4").innerHTML = "";
   document.getElementById("link5").innerHTML = "";
   document.getElementById("link6").innerHTML = "";
-  document.getElementById("text1").innerHTML = " This website uses elementary cellular automota to randomly geneate backgrounds. Each background is unique, and while similar rules and patterns will appear again, no two backgrounds will be exactly alike.";
+  document.getElementById("text1").innerHTML = " This website uses elementary cellular automota to randomly generate backgrounds. Each background is unique, and while similar rules and patterns will appear again, no two backgrounds will be exactly alike.";
   document.getElementById("link7").innerHTML = "\n Back";
-
 }
 
 function homePage(){
   document.getElementById("link1").innerHTML = "Homemade 3D Engine";
   document.getElementById("link2").innerHTML = "Life Miner (Game)";
   document.getElementById("link3").innerHTML = "Github";
-  document.getElementById("link4").innerHTML = "Resume/Contact";
-  document.getElementById("link5").innerHTML = "About This Page";
+  document.getElementById("link4").innerHTML = "Glitch";
+  document.getElementById("link5").innerHTML = "Resume/Contact";
+  document.getElementById("link6").innerHTML = "About this Page";
   document.getElementById("text1").innerHTML = "";
-  document.getElementById("link6").innerHTML = "";
+  document.getElementById("link7").innerHTML = "";
 }
