@@ -27,6 +27,15 @@ function setup(){ //init
   background(255);
   noStroke();
   //frameRate(120);
+  cursor('cursor.png');
+
+}
+
+function mouseMoved(){
+  const cursorTag = document.querySelector("div.cursor")
+  const cursorBox = cursorTag.querySelector('div')
+  cursorBox.style.left = mouseX + "px";
+  cursorBox.style.top = mouseY + "px";
 }
 
 function randomRule(){ //make random ruleset
@@ -116,14 +125,15 @@ function newBackground(){ //start generation over
 }
 
 function aboutPage(){ //show about page
+  //dekstop
   document.getElementById("link1").innerHTML = "";
   document.getElementById("link2").innerHTML = "";
   document.getElementById("link3").innerHTML = "";
   document.getElementById("link4").innerHTML = "";
   document.getElementById("link5").innerHTML = "";
   document.getElementById("link6").innerHTML = "";
-  document.getElementById("text1").innerHTML = " This website uses elementary cellular automota to randomly generate backgrounds. Each background is unique, and while similar rules and patterns will appear again, no two backgrounds will be exactly alike.";
-  document.getElementById("link7").innerHTML = "\n Back";
+  document.getElementById("text1").innerHTML = "This website uses elementary cellular automota to randomly generate backgrounds. Each background is unique, and while similar rules and patterns will appear again, no two backgrounds will be exactly alike.";
+  document.getElementById("link7").innerHTML = "\n Back";5
 }
 
 function homePage(){
