@@ -6,6 +6,7 @@ var row = 0; //row counter
 const pastels = ["#CC99C9", "#9EC1CF", "#9EE09E", "#FDFD97", "#FEB144", "#FF6663"]
 const unicorn = ["#A11C66", "#D4501A", "#F5D002", "#4AA94A", "#016FA4", "#542F71"]
 
+
 function onLoad(){ //mobile version
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {  
     var square = document.querySelector(".square");
@@ -15,6 +16,7 @@ function onLoad(){ //mobile version
     square.style.left = "5%";
     document.querySelector("p").style.fontSize = "24px";
     draw();
+
   }
 }
 
@@ -28,14 +30,24 @@ function setup(){ //init
   noStroke();
   //frameRate(120);
   cursor('cursor.png');
-
 }
 
-function mouseMoved(){
-  const cursorTag = document.querySelector("div.cursor")
-  const cursorBox = cursorTag.querySelector('div')
+function mouseMoved(){ //runs whenever mouse is moved
+  cursorTag = document.querySelector("div.cursor")
+  cursorBox = cursorTag.querySelector('div')
   cursorBox.style.left = mouseX + "px";
   cursorBox.style.top = mouseY + "px";
+}
+
+function desc(text, size){ //show description of element
+  console.log("describing")
+  document.getElementById("hoverbox").innerHTML = text;
+  cursorBox.style.height = size*20 + "px";
+  cursorBox.style.opacity = "100%";
+}
+
+function removeDesc(){ //stop showing description of element
+  cursorBox.style.opacity = "0%";
 }
 
 function randomRule(){ //make random ruleset
