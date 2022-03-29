@@ -5,15 +5,15 @@ temp = new Array(aSize).fill(0);
 var row = 0; //row counter
 const pastels = ["#CC99C9", "#9EC1CF", "#9EE09E", "#FDFD97", "#FEB144", "#FF6663"]
 const unicorn = ["#A11C66", "#D4501A", "#F5D002", "#4AA94A", "#016FA4", "#542F71"]
-const onMobile = false;
-
-function onLoad(){ //mobile version
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {  
-    onMobile = true;
-  }
-}
+var onMobile = false;
+var invertx = 0;
+var inverty = 0;
 
 function setup(){ //init
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {  
+    document.getElementById("i").innerHTML = " ";
+    onMobile = true;
+  }
   randomRule();
   randomColor();
   randomRow();
