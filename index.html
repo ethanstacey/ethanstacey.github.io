@@ -16,38 +16,40 @@
 	<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
 </head>
 <body onload="onLoad()">
-	<div class="square visibledesktop" id="mainbox">
-		<p class="titleD" id="title">Ethan Stacey</p>
-		<a href="http://hypext.rf.gd/" class="link1" onmouseover="desc('Raycasting engine I programmed using mostly vanilla JS.',3)" onmouseout="removeDesc()">Homemade 3D Engine</a>
-		<a href="http://lifeminer.ml/" class="link2" onmouseover="desc('Videogame I made based off of Conways Game of Life.',3)" onmouseout="removeDesc()">Life Miner (Game)</a>
-		<a href="https://github.com/hypext1/" class="link3" onmouseover="desc('Github repository with some of my other projects.',3)" onmouseout="removeDesc()">Github</a>
-		<a href="https://glitch.com/@ethan1stacey" class="link4" onmouseover="desc('Webhook/web app repository and hosting service I have additional projects on.',4)" onmouseout="removeDesc()">Glitch</a>
-		<a href="Ethan-Stacey-Resume.pdf" class="link5" onmouseover="desc('Hire me.',1)" onmouseout="removeDesc()">Resume/Contact</a>
-		<a href="javascript:aboutPage()" class="link6" onmouseover="desc('About my website.',1)" onmouseout="removeDesc()">About this Page</a>
-		<div style="margin-left: 15px; margin-right: 15px;">
-			<p2 class="text1"></p2>
+	<div class="siteDiv">
+		<div class="square visibledesktop" id="mainbox">
+			<p class="titleD" id="title">Ethan Stacey</p>
+			<a href="http://hypext.rf.gd/" class="link" onmouseover="desc('Raycasting engine I programmed using mostly vanilla JS.',3)" onmouseout="removeDesc()">Homemade 3D Engine</a>
+			<a href="http://lifeminer.ml/" class="link" onmouseover="desc('Videogame I made based off of Conways Game of Life.',3)" onmouseout="removeDesc()">Life Miner (Game)</a>
+			<a href="https://github.com/hypext1/" class="link" onmouseover="desc('Github repository with some of my other projects.',3)" onmouseout="removeDesc()">Github</a>
+			<a href="https://glitch.com/@ethan1stacey" class="link" onmouseover="desc('Webhook/web app repository and hosting service I have additional projects on.',4)" onmouseout="removeDesc()">Glitch</a>
+			<a href="Ethan-Stacey-Resume.pdf" class="link" onmouseover="desc('Hire me.',1)" onmouseout="removeDesc()">Resume/Contact</a>
+			<div style="margin-left: 15px; margin-right: 15px;">
+				<p2 class="text1"></p2>
+			</div>
+			<br>
+			<a href="javascript:homePage()" class="link7"></a>
 		</div>
-		<br>
-		<a href="javascript:homePage()" class="link7"></a>
-	</div>
-	<div class="square_mobile visibledevice" id="mainbox_mobile">
-		<p class="titleM" id="title">Ethan Stacey</p>
-		<a href="http://hypext.rf.gd/" class="link1" onmouseover="desc('Raycasting engine I programmed using mostly vanilla JS.',3)" onmouseout="removeDesc()">Homemade 3D Engine</a>
-		<a href="http://lifeminer.ml/" class="link2" onmouseover="desc('Videogame I made based off of Conways Game of Life.',3)" onmouseout="removeDesc()">Life Miner (Game)</a>
-		<a href="https://github.com/hypext1/" class="link3" onmouseover="desc('Github repository with some of my other projects.',3)" onmouseout="removeDesc()">Github</a>
-		<a href="https://glitch.com/@ethan1stacey" class="link4" onmouseover="desc('Webhook/web app repository and hosting service I have additional projects on.',4)" onmouseout="removeDesc()">Glitch</a>
-		<a href="Ethan-Stacey-Resume.pdf" class="link5" onmouseover="desc('Hire me.',1)" onmouseout="removeDesc()">Resume/Contact</a>
-		<a href="javascript:aboutPage()" class="link6" onmouseover="desc('About my website.',1)" onmouseout="removeDesc()">About this Page</a>
-		<div style="margin-left: 15px; margin-right: 15px;">
-			<p2 class="text1"></p2>
+		<div class="square_mobile visibledevice" id="mainbox_mobile">
+			<p class="titleM" id="title">Ethan Stacey</p>
+			<a href="http://hypext.rf.gd/" class="link" onmouseover="desc('Raycasting engine I programmed using mostly vanilla JS.',3,false)" onmouseout="removeDesc()">Homemade 3D Engine</a>
+			<a href="http://lifeminer.ml/" class="link" onmouseover="desc('Videogame I made based off of Conways Game of Life.',3,false)" onmouseout="removeDesc()">Life Miner (Game)</a>
+			<a href="https://github.com/hypext1/" class="link" onmouseover="desc('Github repository with some of my other projects.',3,false)" onmouseout="removeDesc()">Github</a>
+			<a href="https://glitch.com/@ethan1stacey" class="link" onmouseover="desc('Webhook/web app repository and hosting service I have additional projects on.',4,false)" onmouseout="removeDesc()">Glitch</a>
+			<a href="Ethan-Stacey-Resume.pdf" class="link" onmouseover="desc('Hire me.',1,false)" onmouseout="removeDesc()">Resume/Contact</a>
+			<div style="margin-left: 15px; margin-right: 15px;">
+				<p2 class="text1"></p2>
+			</div>
+			<br>
+			<a href="javascript:homePage()" class="link7"></a>
 		</div>
-		<br>
-		<a href="javascript:homePage()" class="link7"></a>
 	</div>
+
+	<a class="i" onmouseover="desc('Backgrounds are randomly generated using elementary cellular automota. Each background is unique and will never be seen again.',7,true)" onmouseout="removeDesc()", true>?</a>
 
 	<div class="cursor">
 		<div>
-			<span id="hoverbox">hi</span>
+			<span id="hoverbox">oops</span>
 		</div>
 	</div>
 </body>
@@ -78,6 +80,37 @@
 		margin: 0;
 		text-align: center;
 		opacity: .5;
+	}
+
+	.siteDiv{
+		position: relative;
+	}
+
+	.link{
+		margin-left: 15px;
+  		margin-right: 15px;
+
+		text-decoration: none;
+		font-family: 'Zilla Slab', serif;
+		position: relative;
+		left: 0%;
+		top: 0%;
+		z-index: 2;
+		font-size: 5em;
+		float: left;
+    	clear: left;
+		color: white;
+		font-weight: bold;
+	}
+
+	.i{
+		z-index: 2;
+		position: fixed;
+    	bottom: 8px;
+    	right: 16px;
+		font-size: 5em;
+		color: black;
+		font-weight: bold;
 	}
 
 	.titleD{
@@ -115,23 +148,7 @@
 		color: white;
 	}
 
-	a {
-		margin-left: 15px;
-  		margin-right: 15px;
-
-		text-decoration: none;
-		font-family: 'Zilla Slab', serif;
-		position: relative;
-		left: 0%;
-		top: 0%;
-		z-index: 2;
-		font-size: 5em;
-		float: left;
-    	clear: left;
-		color: white;
-		font-weight: bold;
-	}
-	a:hover{
+	a.link:hover{
 		background-color: #ddd;
 		color: black;
 		cursor: url(cursor_select.png), auto;

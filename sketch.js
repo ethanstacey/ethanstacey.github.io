@@ -28,12 +28,20 @@ function setup(){ //init
 function mouseMoved(){ //runs whenever mouse is moved
   cursorTag = document.querySelector("div.cursor")
   cursorBox = cursorTag.querySelector('div')
-  cursorBox.style.left = mouseX + "px";
-  cursorBox.style.top = mouseY + "px";
+  cursorBox.style.left = mouseX - invertx + "px";
+  cursorBox.style.top = mouseY - inverty + "px";
 }
 
-function desc(text, size){ //show description of element
+function desc(text, size, reverse){ //show description of element
   if (onMobile == false){
+    if (reverse == true){
+      invertx = 175;
+      inverty = 170;
+    }
+    else{
+      invertx = 0;
+      inverty = 0;
+    }
     document.getElementById("hoverbox").innerHTML = text;
     cursorBox.style.height = size*20 + "px";
     cursorBox.style.opacity = "100%";
@@ -128,27 +136,4 @@ function newBackground(){ //start generation over
   randomColor();
   randomRow();
   row = 0;
-}
-
-function aboutPage(){ //show about page
-  //dekstop
-  document.getElementsByClassName("link1").innerHTML = "";
-  document.getElementsByClassName("link2").innerHTML = "";
-  document.getElementsByClassName("link3").innerHTML = "";
-  document.getElementsByClassName("link4").innerHTML = "";
-  document.getElementsByClassName("link5").innerHTML = "";
-  document.getElementsByClassName("link6").innerHTML = "";
-  document.getElementsByClassName("text1").innerHTML = "This website uses elementary cellular automota to randomly generate backgrounds. Each background is unique, and while similar rules and patterns will appear again, no two backgrounds will be exactly alike.";
-  document.getElementsByClassName("link7").innerHTML = "\n Back";5
-}
-
-function homePage(){
-  document.getElementsByClassName("link1").innerHTML = "Homemade 3D Engine";
-  document.getElementsByClassName("link2").innerHTML = "Life Miner (Game)";
-  document.getElementsByClassName("link3").innerHTML = "Github";
-  document.getElementsByClassName("link4").innerHTML = "Glitch";
-  document.getElementsByClassName("link5").innerHTML = "Resume/Contact";
-  document.getElementsByClassName("link6").innerHTML = "About this Page";
-  document.getElementsByClassName("text1").innerHTML = "";
-  document.getElementsByClassName("link7").innerHTML = "";
 }
