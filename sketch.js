@@ -5,18 +5,11 @@ temp = new Array(aSize).fill(0);
 var row = 0; //row counter
 const pastels = ["#CC99C9", "#9EC1CF", "#9EE09E", "#FDFD97", "#FEB144", "#FF6663"]
 const unicorn = ["#A11C66", "#D4501A", "#F5D002", "#4AA94A", "#016FA4", "#542F71"]
-
+const onMobile = false;
 
 function onLoad(){ //mobile version
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {  
-    var square = document.querySelector(".square");
-    square.style.height = "70vh";
-    square.style.width = "90vw";
-    square.style.top = "15%";
-    square.style.left = "5%";
-    document.querySelector("p").style.fontSize = "24px";
-    draw();
-
+    onMobile = true;
   }
 }
 
@@ -40,10 +33,11 @@ function mouseMoved(){ //runs whenever mouse is moved
 }
 
 function desc(text, size){ //show description of element
-  console.log("describing")
-  document.getElementById("hoverbox").innerHTML = text;
-  cursorBox.style.height = size*20 + "px";
-  cursorBox.style.opacity = "100%";
+  if (onMobile == false){
+    document.getElementById("hoverbox").innerHTML = text;
+    cursorBox.style.height = size*20 + "px";
+    cursorBox.style.opacity = "100%";
+  }
 }
 
 function removeDesc(){ //stop showing description of element
@@ -138,23 +132,23 @@ function newBackground(){ //start generation over
 
 function aboutPage(){ //show about page
   //dekstop
-  document.getElementById("link1").innerHTML = "";
-  document.getElementById("link2").innerHTML = "";
-  document.getElementById("link3").innerHTML = "";
-  document.getElementById("link4").innerHTML = "";
-  document.getElementById("link5").innerHTML = "";
-  document.getElementById("link6").innerHTML = "";
-  document.getElementById("text1").innerHTML = "This website uses elementary cellular automota to randomly generate backgrounds. Each background is unique, and while similar rules and patterns will appear again, no two backgrounds will be exactly alike.";
-  document.getElementById("link7").innerHTML = "\n Back";5
+  document.getElementsByClassName("link1").innerHTML = "";
+  document.getElementsByClassName("link2").innerHTML = "";
+  document.getElementsByClassName("link3").innerHTML = "";
+  document.getElementsByClassName("link4").innerHTML = "";
+  document.getElementsByClassName("link5").innerHTML = "";
+  document.getElementsByClassName("link6").innerHTML = "";
+  document.getElementsByClassName("text1").innerHTML = "This website uses elementary cellular automota to randomly generate backgrounds. Each background is unique, and while similar rules and patterns will appear again, no two backgrounds will be exactly alike.";
+  document.getElementsByClassName("link7").innerHTML = "\n Back";5
 }
 
 function homePage(){
-  document.getElementById("link1").innerHTML = "Homemade 3D Engine";
-  document.getElementById("link2").innerHTML = "Life Miner (Game)";
-  document.getElementById("link3").innerHTML = "Github";
-  document.getElementById("link4").innerHTML = "Glitch";
-  document.getElementById("link5").innerHTML = "Resume/Contact";
-  document.getElementById("link6").innerHTML = "About this Page";
-  document.getElementById("text1").innerHTML = "";
-  document.getElementById("link7").innerHTML = "";
+  document.getElementsByClassName("link1").innerHTML = "Homemade 3D Engine";
+  document.getElementsByClassName("link2").innerHTML = "Life Miner (Game)";
+  document.getElementsByClassName("link3").innerHTML = "Github";
+  document.getElementsByClassName("link4").innerHTML = "Glitch";
+  document.getElementsByClassName("link5").innerHTML = "Resume/Contact";
+  document.getElementsByClassName("link6").innerHTML = "About this Page";
+  document.getElementsByClassName("text1").innerHTML = "";
+  document.getElementsByClassName("link7").innerHTML = "";
 }
