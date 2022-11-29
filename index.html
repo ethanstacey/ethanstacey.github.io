@@ -39,7 +39,7 @@
 			</div>
 			<p class="titleM" id="title">Ethan Stacey</p>
 			<a href="http://hypext.rf.gd/" class="link" onmouseover="desc('Raycasting engine I programmed using mostly vanilla JS.',3,false)" onmouseout="removeDesc()">Homemade 3D Engine</a>
-			<a href="http://lifeminer.ml/" class="link" onmouseover="desc('Videogame I made based off of Conways Game of Life.',2,false)" onmouseout="removeDesc()">Life Miner (Game)</a>
+			<a href="http://lifeminer.ml/" class="link" onmouseover="desc('Videogame I made based off of Conways Game of Life.',2,false)" onmouseout="removeDesc()">Life Miner</a>
 			<a href="https://github.com/hypext1/" class="link" onmouseover="desc('Github repository with some of my other projects.',2,false)" onmouseout="removeDesc()">Github</a>
 			<a href="https://glitch.com/@ethan1stacey" class="link" onmouseover="desc('Webhook/web app repository and hosting service I have additional projects on.',3,false)" onmouseout="removeDesc()">Glitch</a>
 			<a href="Ethan-Stacey-Resume.pdf" class="link" onmouseover="desc('Hire me.',1,false)" onmouseout="removeDesc()">Resume/Contact</a>
@@ -150,7 +150,8 @@
 		border-left-color: #F4F4E8;
 
 		padding: 1%;
-		margin-top: 1%;
+		margin-bottom: 1%;
+		flex: 1;
 	}
 
 	.i{
@@ -218,8 +219,6 @@
 
 	div.cursor div {
 		position: absolute;
-		width: 220px;
-		height: 100px;
 		background-color: #F4F4E8;
 		opacity: 0%;
 		z-index: 10000;
@@ -234,16 +233,17 @@
 		border-color:#000000;
 
 		transform: translate(10%, 15%);
+		flex: 1;
 	}
 
 	.square {
 		position: fixed;
-		height: 54vh;
 		width: 50vw;
 		top: 23%;
 		left: 23%;
 		z-index: 1;
 		background: RGB(212,208,200);
+		flex: 1;
 
 		border-width:3px;
 		border-style:solid;
@@ -253,12 +253,12 @@
 	}
 	.square_mobile {
 		position: fixed;
-		height: 54vh;
 		width: 50vw;
 		top: 23%;
 		left: 23%;
 		z-index: 1;
 		background: RGB(212,208,200);
+		flex: 1;
 
 		border-width:3px;
 		border-style:solid;

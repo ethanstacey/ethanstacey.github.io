@@ -35,15 +35,14 @@ function mouseMoved(){ //runs whenever mouse is moved
 function desc(text, size, reverse){ //show description of element
   if (onMobile == false){
     if (reverse == true){
-      invertx = 255;
-      inverty = 140;
+      invertx = 200;
+      inverty = 100;
     }
     else{
       invertx = 0;
       inverty = 0;
     }
     document.getElementById("hoverbox").innerHTML = text;
-    cursorBox.style.height = size*22 + "px";
     cursorBox.style.opacity = "100%";
   }
 }
