@@ -1,5 +1,5 @@
-const rSize = 2; //rectangle size
-const aSize = 1000; //array size
+const rSize = 3; //rectangle size
+const aSize = 800; //array size
 currentArray = new Array(aSize).fill(0);
 temp = new Array(aSize).fill(0);
 var row = 0; //row counter
@@ -18,7 +18,7 @@ function setup(){ //init
   randomColor();
   randomRow();
   currentArray[aSize-1] = 1;
-  createCanvas(2000, 1200);
+  createCanvas(2400, 1200);
   background(255);
   noStroke();
   //frameRate(120);
@@ -35,15 +35,15 @@ function mouseMoved(){ //runs whenever mouse is moved
 function desc(text, size, reverse){ //show description of element
   if (onMobile == false){
     if (reverse == true){
-      invertx = 175;
-      inverty = 170;
+      invertx = 255;
+      inverty = 140;
     }
     else{
       invertx = 0;
       inverty = 0;
     }
     document.getElementById("hoverbox").innerHTML = text;
-    cursorBox.style.height = size*20 + "px";
+    cursorBox.style.height = size*22 + "px";
     cursorBox.style.opacity = "100%";
   }
 }
@@ -64,7 +64,8 @@ function randomRule(){ //make random ruleset
 }
 
 function randomColor(){
-  color1 = unicorn[Math.floor(Math.random()*5)];
+  color1 = pastels[Math.floor(Math.random()*6)];
+  color2 = pastels[Math.floor(Math.random()*6)];
   //document.getElementById("title").style.color = color1;
 }
 
@@ -80,7 +81,7 @@ function draw(){ //draw pattern on the screen
     if (currentArray[i] == 1){ 
       fill(color1);
     } else {
-      fill(255);
+      fill(color2);
     }
     rect(rSize*i,rSize*row,rSize,rSize);
   }
