@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .centered-rectangle {
+    width: 200px; /* Set your desired width */
+    height: 100px; /* Set your desired height */
+    background-color: #3498db; /* Set your desired background color */
+  }
