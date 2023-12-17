@@ -11,14 +11,17 @@ var inverty = 0;
 
 function setup(){ //init
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {  
-    document.getElementById("i").innerHTML = " ";
     onMobile = true;
   }
   randomRule();
   randomColor();
   randomRow();
   currentArray[aSize-1] = 1;
-  createCanvas(2400, 1200);
+  if (onMobile){
+    createCanvas(400, 800);
+  } else {
+    createCanvas(2400, 1200);
+  }
   background(255);
   noStroke();
   //frameRate(120);
