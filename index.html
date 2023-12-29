@@ -9,7 +9,7 @@
 		
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
 	
-	<script type="text/javascript" src="sketch.js?v=4.1"></script>
+	<script type="text/javascript" src="sketch.js?v=4.11"></script>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -236,14 +236,15 @@
 	}
 
 	.square {
-		position: fixed;
-		width: 50vw;
-		top: 23%;
-		left: 23%;
-		z-index: 1;
-		background: RGB(212,208,200);
-		flex: 1;
-		padding-bottom: 1%;
+        position: fixed;
+        width: 50vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background: RGB(212,208,200);
+        flex: 1;
+        padding-bottom: 1%;
 
 		border-width:3px;
 		border-style:solid;
@@ -252,14 +253,15 @@
 		border-left-color: #F4F4E8;
 	}
 	.square_mobile {
-		position: fixed;
-		width: 80vw;
-		top: 23%;
-		left: 9.5%;
-		z-index: 1;
-		background: RGB(212,208,200);
-		flex: 1;
-		padding-bottom: 1%;
+        position: fixed;
+        width: 80vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background: RGB(212,208,200);
+        flex: 1;
+        padding-bottom: 1%;
 
 		border-width:3px;
 		border-style:solid;
