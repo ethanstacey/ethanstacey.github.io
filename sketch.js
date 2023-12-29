@@ -31,8 +31,8 @@ function setup(){ //init
 function mouseMoved(){ //runs whenever mouse is moved
   cursorTag = document.querySelector("div.cursor")
   cursorBox = cursorTag.querySelector('div')
-  cursorBox.style.left = mouseX - invertx + "px";
-  cursorBox.style.top = mouseY - inverty + "px";
+  cursorBox.style.left = mouseX - invertx + 10 + "px";
+  cursorBox.style.top = mouseY - inverty + 10 + "px";
 }
 
 function desc(text, size, reverse){ //show description of element
