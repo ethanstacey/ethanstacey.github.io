@@ -38,8 +38,8 @@ function mouseMoved(){ //runs whenever mouse is moved
 function desc(text, size, reverse){ //show description of element
   if (onMobile == false){
     if (reverse == true){
-      invertx = 200;
-      inverty = 100;
+      invertx = 250;
+      inverty = 115;
     }
     else{
       invertx = 0;
