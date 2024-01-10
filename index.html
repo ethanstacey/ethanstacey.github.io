@@ -9,7 +9,7 @@
 		
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
 	
-	<script type="text/javascript" src="sketch.js?v=4.12"></script>
+	<script type="text/javascript" src="sketch.js?v=4.13"></script>
 	<script src="p5.sound.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,11 +22,26 @@
 				<x>X</x>
 			</div>
 			<p class="titleD" id="title">Ethan Stacey</p>
-			<a href="http://hypext.rf.gd/" class="link" onmouseover="desc('Raycasting engine I programmed using mostly vanilla JS.',3)" onmouseout="removeDesc()">Homemade 3D Engine</a>
-			<a href="http://lifeminer.rf.gd/" class="link" onmouseover="desc('Videogame I made based off of Conways Game of Life.',2)" onmouseout="removeDesc()">Life Miner</a>
-			<a href="https://github.com/hypext1/" class="link" onmouseover="desc('Github repository with some of my other projects.',2)" onmouseout="removeDesc()">Github</a>
-			<a href="https://glitch.com/@ethan1stacey" class="link" onmouseover="desc('Webhook/web app repository and hosting service I have additional projects on.',3)" onmouseout="removeDesc()">Glitch</a>
-			<a href="Ethan-Stacey-Resume.pdf" class="link" onmouseover="desc('Hire me.',1)" onmouseout="removeDesc()">Resume/Contact</a>
+			<a href="http://hypext.rf.gd/" class="link" onmouseover="desc('Raycasting engine I programmed using mostly vanilla JS.',3)" onmouseout="removeDesc()">
+				<img src="./assets/3d.png" class="button-image">
+				Homemade 3D Engine
+			</a>
+			<a href="http://lifeminer.rf.gd/" class="link" onmouseover="desc('Videogame I made based off of Conways Game of Life.',2)" onmouseout="removeDesc()">
+				<img src="./assets/lifeminer.png" class="button-image">
+				Life Miner
+			</a>
+			<a href="https://github.com/hypext1/" class="link" onmouseover="desc('Github repository with some of my other projects.',2)" onmouseout="removeDesc()">
+				<img src="./assets/github.png" class="button-image">
+				Github
+			</a>
+			<a href="https://glitch.com/@ethan1stacey" class="link" onmouseover="desc('Webhook/web app repository and hosting service I have additional projects on.',3)" onmouseout="removeDesc()">
+				<img src="./assets/glitch.png" class="button-image">
+				Glitch
+			</a>
+			<a href="Ethan-Stacey-Resume.pdf" class="link" onmouseover="desc('Hire me.',1)" onmouseout="removeDesc()">
+				<img src="./assets/page.png" class="button-image">
+				Resume/Contact
+			</a>
 			<div style="margin-left: 15px; margin-right: 15px;">
 				<p2 class="text1"></p2>
 			</div>
@@ -284,6 +299,9 @@
 		image-rendering: pixelated;                 /* Universal support since 2021   */
 		image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
 		-ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+	}
+	.button-image {
+		width: 16px;
 	}
 
 	@media (max-width: 700px) {
