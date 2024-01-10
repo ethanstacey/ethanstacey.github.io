@@ -10,7 +10,7 @@ var invertx = 0;
 var inverty = 0;
 
 function preload(){ //load before website renders
-  song = loadSound('site-010.ogg');
+  song = loadSound('site-010.mp3');
   hoverSound = loadSound('mirakit-008.wav')
 }
 
