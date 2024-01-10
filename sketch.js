@@ -9,6 +9,11 @@ var onMobile = false;
 var invertx = 0;
 var inverty = 0;
 
+function preload(){ //load before website renders
+  song = loadSound('site-010.ogg');
+  hoverSound = loadSound('mirakit-008.wav')
+}
+
 function setup(){ //init
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {  
     onMobile = true;
@@ -24,8 +29,8 @@ function setup(){ //init
   }
   background(255);
   noStroke();
-  //frameRate(120);
   cursor('cursor.png');
+  song.play();
 }
 
 function mouseMoved(){ //runs whenever mouse is moved
@@ -48,6 +53,7 @@ function desc(text, size, reverse){ //show description of element
     document.getElementById("hoverbox").innerHTML = text;
     cursorBox.style.opacity = "100%";
   }
+  hoverSound.play()
 }
 
 function removeDesc(){ //stop showing description of element
