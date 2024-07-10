@@ -1,9 +1,9 @@
 //settings
-const scale = 6
+const scale = 1
 const x1 = 0
-const x2 = 128
+const x2 = 768
 const y1 = 0
-const y2 = 128
+const y2 = 768
 const focalLength = 4
 const map = [
   [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1],
@@ -33,8 +33,11 @@ const mapXLength = map.length
 const mapYLength = map[0].length
 
 function setup() {
-  createCanvas(x2*scale, y2*scale);
-  background(100,100,255);
+  var cnv = createCanvas(x2*scale, y2*scale);
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
+  background(200);
   noStroke()
 }
 
@@ -60,18 +63,24 @@ function draw() {
   //engine
   for (let y=y1; y<y2; y++){
     for (let x=x1; x<x2; x++){
-      if (x>halfX2){ //don't render top half of screen
+
+      //don't render top half of screen
+      if (x>halfX2){ 
+
+        //create perspective
         const z = x-halfY2+0.01
         const px = Math.floor((x2-y) / z + posX)
         const py = Math.floor((y+focalLength) / z + posY)
+
+        //check if px is in map array
         if (px >= 0 && px < mapXLength && py >= 0 && py < mapYLength ){
-          fill(0, 100+map[px][py]*100, 0);
+          set(y,x,100*map[px][py])
         }
         else { 
-          fill(100,100,255)
+          set(y,x,200) //skybox color
         }
-        square(y*scale, x*scale, scale);
       }
     }
   }
+  updatePixels()
 }
