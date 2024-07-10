@@ -1,20 +1,10 @@
-function setup() {
-  createCanvas(780, 780);
-  background(200);
-  noStroke()
-}
-
 //settings
-const scale = 6;
-const resolution = 16;
-const x1 = 0 * resolution;
-const x2 = 8 * resolution;
-const y1 = 0 * resolution;
-const y2 = 8 * resolution;
-var a = 1;
-var b = 0;
-var c = 1;
-var d = 0;
+const scale = 6
+const x1 = 0
+const x2 = 128
+const y1 = 0
+const y2 = 128
+const focalLength = 4
 const map = [
   [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1],
   [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0],
@@ -33,60 +23,55 @@ const map = [
   [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1],
   [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0],
 ]
+var posX = 0
+var posY = 0
+
+//do not touch
+const halfX2 = x2/2
+const halfY2 = y2/2
+const mapXLength = map.length
+const mapYLength = map[0].length
+
+function setup() {
+  createCanvas(x2*scale, y2*scale);
+  background(100,100,255);
+  noStroke()
+}
 
 function draw() {
-
   //user input
   if (keyIsDown(87) === true) { //w
-    a = a + 0.02
+    posX = posX + 0.3
+    posY = posY + 0.3
   }
   if (keyIsDown(65) === true) { //a
-    b = b + 0.02
+    posX = posX + 0.3
+    posY = posY - 0.3
   }
   if (keyIsDown(83) === true) { //s
-    a = a - 0.02
+    posX = posX - 0.3
+    posY = posY - 0.3
   }
   if (keyIsDown(68) === true) { //d
-    b = b - 0.02
+    posX = posX - 0.3
+    posY = posY + 0.3
   }
-
-  /*
-  //animation
-  if (a < 2){
-    a = a + 0.01
-    b = b - 0.01
-    c = c - 0.01
-    d = d + 0.01
-  } else {
-    a = 1
-    b = 0
-    c = 1
-    d = 0
-  }
-  */
 
   //engine
-  var xstep = 0;
-  var ystep = 0;
   for (let y=y1; y<y2; y++){
-    xstep++;
     for (let x=x1; x<x2; x++){
-      ystep++;
-      const fx = Math.floor(x/resolution*a + y/resolution*b)
-      const fy = Math.floor(y/resolution*c + x/resolution*d)
-      if (fx < 64 && fx >= 0){
-        try{
-          fill(0, 100+map[fx][fy]*100, 0);
-        } catch {
-          fill(100,100,255)
-          console.log("ERR out of bounds: " + fx + "," + fy)
+      if (x>halfX2){ //don't render top half of screen
+        const z = x-halfY2+0.01
+        const px = Math.floor((x2-y) / z + posX)
+        const py = Math.floor((y+focalLength) / z + posY)
+        if (px >= 0 && px < mapXLength && py >= 0 && py < mapYLength ){
+          fill(0, 100+map[px][py]*100, 0);
         }
+        else { 
+          fill(100,100,255)
+        }
+        square(y*scale, x*scale, scale);
       }
-      else { 
-        fill(100,100,255)
-      }
-      square(xstep*scale, ystep*scale, scale);
     }
-    ystep=0;
   }
 }
