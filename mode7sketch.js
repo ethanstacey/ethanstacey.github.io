@@ -1,10 +1,11 @@
 //settings
 const scale = 1
-const x1 = 0
+const x1 = 768/2
 const x2 = 768
 const y1 = 0
 const y2 = 768
 const focalLength = 4
+const speed = 0.2
 const map = [
   [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1],
   [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0],
@@ -23,8 +24,9 @@ const map = [
   [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1],
   [1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0],
 ]
-var posX = 0
-var posY = 0
+var posX = 0 //staring x
+var posY = 0 //starting y
+var angle = -1 //starting angle
 
 //do not touch
 const halfX2 = x2/2
@@ -44,41 +46,42 @@ function setup() {
 function draw() {
   //user input
   if (keyIsDown(87) === true) { //w
-    posX = posX + 0.3
-    posY = posY + 0.3
+    posX = posX + Math.cos(angle+1.6) * speed
+    posY = posY + Math.sin(angle+1.6) * speed
   }
   if (keyIsDown(65) === true) { //a
-    posX = posX + 0.3
-    posY = posY - 0.3
+    angle = angle - 0.1
   }
   if (keyIsDown(83) === true) { //s
-    posX = posX - 0.3
-    posY = posY - 0.3
+    posX = posX - Math.cos(angle+1.6) * speed
+    posY = posY - Math.sin(angle+1.6) * speed
   }
   if (keyIsDown(68) === true) { //d
-    posX = posX - 0.3
-    posY = posY + 0.3
+    angle = angle + 0.1
   }
+  const sin = Math.sin(angle)
+  const cos = Math.cos(angle)
 
   //engine
-  for (let y=y1; y<y2; y++){
-    for (let x=x1; x<x2; x++){
+  for (let i=y1; i<y2; i++){
+    for (let j=x1; j<x2; j++){
+      const x = halfX2 - i
+      const y = j + focalLength
+      const z = j - halfY2 + 0.01
 
-      //don't render top half of screen
-      if (x>halfX2){ 
+      //rotation
+      const rx = (x * cos - y * sin)
+      const ry = (x * sin + y * cos)
 
-        //create perspective
-        const z = x-halfY2+0.01
-        const px = Math.floor((x2-y) / z + posX)
-        const py = Math.floor((y+focalLength) / z + posY)
+      //create perspective
+      const px = Math.floor(rx / z + posX)
+      const py = Math.floor(ry / z + posY)
 
-        //check if px is in map array
-        if (px >= 0 && px < mapXLength && py >= 0 && py < mapYLength ){
-          set(y,x,100*map[px][py])
-        }
-        else { 
-          set(y,x,200) //skybox color
-        }
+      //check if px is in map array
+      if (px >= 0 && px < mapXLength && py >= 0 && py < mapYLength ){
+        set(i,j,100*map[px][py])
+      } else { 
+        set(i,j,200) //skybox color
       }
     }
   }
