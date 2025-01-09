@@ -11,7 +11,7 @@ var inverty = 0;
 
 function preload(){ //load before website renders
   song = loadSound('site-010.mp3');
-  hoverSound = loadSound('mirakit-008.wav')
+  hoverSound = loadSound('websitesound.mp3')
 }
 
 function setup(){ //init
