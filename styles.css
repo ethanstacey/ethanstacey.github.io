@@ -266,8 +266,10 @@ img {
     width: 16px;
 }
 .video-box {
-    height: 28vw;
+    height: 25vw;
     flex: 1;
+    padding: 5px;
+    margin: 5px;
 }
 
 @media (max-width: 700px) {
