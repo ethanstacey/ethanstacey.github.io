@@ -30,7 +30,9 @@ function setup(){ //init
   background(255);
   noStroke();
   cursor('cursor.png');
-  song.play();
+  if (getURL() == "https://ethanstacey.github.io/index.html" || getURL() == "http://127.0.0.1:5501/index.html"){
+    song.play();
+  }
 }
 
 function mouseMoved(){ //runs whenever mouse is moved
