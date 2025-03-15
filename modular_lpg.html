@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">	
+
+	<title>LPG</title>
+		
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
+	<script src="p5.sound.js"></script>
+
+	<script type="text/javascript" src="sketch.js?v=4.16"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+	<link rel='stylesheet' type='text/css' href='styles.css'>	
+</head>
+<body>
+	<div class="siteDiv">
+		<div class="hardware_square" id="mainbox_mobile">
+			<div class="topBar">
+				<a href="index.html" style="text-decoration: none; color: black;">
+					<x>X</x>
+				</a>
+			</div>
+			<div class="container">
+				<!-- <img id="left" class="arrow-box" src="./assets/left.png" onmouseover="left()" onmouseout="leftOut()"/> -->
+				<video id="videoPlayer" class="video-box" controls>
+					<source src="./assets/LPG.webm" type="video/webm">
+					<!-- Fallback message for unsupported browsers -->
+					Your browser does not support the video tag.
+				</video>
+				<div class="box">
+					<p class="titleD" id="title">LPG</p>
+					<p2 class="box">"LPG" is the classic vactrol low-pass gate. This is my favorite DIY module given how simple and yet how useful it is. It purposefully uses the latency of a LED and a photoresistor to turn a constant tone into an organic plucking sound.</p2>
+				</div>
+				<a class="arrow-box" href="pedal_lm386.html">
+					<img id="right" class="arrow" src="./assets/right.png" onmouseover="right()" onmouseout="rightOut()"/>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<a id="i" class="i" onmouseover="desc('Backgrounds are randomly generated using elementary cellular automota. Each background is unique and will never be seen again.',5,true)" onmouseout="removeDesc()", true>?</a>
+
+	<div class="cursor">
+		<div>
+			<span id="hoverbox">oops</span>
+		</div>
+	</div>
+</body>
+</html>
